@@ -1,4 +1,44 @@
 
+console.log("===== PRACTICE =====");
+
+// DEFINE
+function qoldiqliBolish(a, b, callback) {
+  if (b === 0) {
+    callback("Mahraj nolga teng emas", null);
+  } else {
+    callback(null, a % b);
+  } 
+}  
+
+// CALL
+qoldiqliBolish(10, 10, (err, data) => {
+  if (err) console.log("Error:", err);
+  else {
+    console.log("data:", data);
+  }  
+});    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// TAST (A) by JONY
+
 function countLetter(taassurotsizlik, word) {
   let count = 0;
   
