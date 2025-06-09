@@ -1,57 +1,51 @@
 
-console.log("===== PRACTICE =====");
-
-// DEFINE
-function qoldiqliBolish(a, b, callback) {
-  if (b === 0) {
-    callback("Mahraj nolga teng emas", null);
-  } else {
-    callback(null, a % b);
-  } 
-}  
-
-// CALL
-qoldiqliBolish(10, 10, (err, data) => {
-  if (err) console.log("Error:", err);
-  else {
-    console.log("data:", data);
-  }  
-});    
+// TASK (B) by JONY
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// TAST (A) by JONY
-
-function countLetter(taassurotsizlik, word) {
-  let count = 0;
+function countDigits(text){
+  console.log(typeof text);
+  const result = text.split("");
+  console.log(result);
   
-  for (let i = 0; i < word.length; i++) {
-    if (word[i] === taassurotsizlik) {
-      count++;
-    }
-  }
-
-  return count;
+  const lastResult = result.filter((ele) => {
+    return ele >= 0  && ele !== " ";
+  })
+  console.log(lastResult);
 }
+ countDigits("ieowhfwoui3948665096609elch") ; 
 
-console.log(countLetter("s", "taassurotsizlik")); 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//TASK (A) // natijamiz 3
+
+// function countLetter(taassurotsizlik, word) {
+//   let count = 0;
+  
+//   for (let i = 0; i < word.length; i++) {
+//     if (word[i] === taassurotsizlik) {
+//       count++;
+//     }
+//   }
+
+//   return count;
+// }
+
+// console.log(countLetter("s", "taassurotsizlik")); 
 
 
 // natijamiz 3
@@ -61,12 +55,24 @@ console.log(countLetter("s", "taassurotsizlik"));
 
 
 
+// console.log("===== PRACTICE =====");
 
+// // DEFINE
+// function qoldiqliBolish(a, b, callback) {
+//   if (b === 0) {
+//     callback("Mahraj nolga teng emas", null);
+//   } else {
+//     callback(null, a % b);
+//   } 
+// }  
 
-
-
-
-
+// // CALL
+// qoldiqliBolish(10, 10, (err, data) => {
+//   if (err) console.log("Error:", err);
+//   else {
+//     console.log("data:", data);
+//   }  
+// });    
 
 
 
