@@ -16,6 +16,7 @@ fs.readFile("database/user.json", "utf8", (err, data) => {
 
 //MongoDB chaqirish
 const db = require("./server").db();
+const mongodb = require("mongodb");
 
 
 
@@ -27,7 +28,7 @@ app.use(express.urlencoded({ extended: true }));
 // 2 : Session code
    
 // 3: Views codes     
-app.set("views", "views");      
+app.set("views", "views");       
 app.set("view engine", "ejs");        
          
 // 4: Routine codes       
@@ -41,14 +42,25 @@ app.post("/create-item", (req, res) => {
        res.json(data.ops[0]);
     });   
              
-});          
-                   
+});     
+
+app.post("/delete-item", (req, res) => {
+    const id = req.body.id;
+    db.collection("plans").deleteOne(
+        {_id: new mongodb.ObjectId(id)},
+     function(err, data) {
+        res.json({state: "success"});
+    });
+    
+});
+ 
+                     
 app.get('/author', (req, res) => { 
     console.log('user entered /');      
     res.render("author", {user: user});                
 })                      
      
-app.get("/", function (req, res) {   
+app.get("/", function (req, res) {    
     db.collection("plans")
     .find()
     .toArray((err, data) => {

@@ -1,19 +1,72 @@
 
-// TASK (B) by JONY
+// TASK (C)
 
+class Shop {
+  constructor(non, suv, osh) {
+    this.mahsulotlar = {
+      non: non,
+      suv: suv,
+      osh: osh
+    };   
+  }    
 
+  realTime() {
+    const hozir = new Date();
+    const soat = hozir.getHours().toString().padStart(2, '0');
+    const minut = hozir.getMinutes().toString().padStart(2, '0');
+    return `${soat}:${minut}`;
+  }
 
-function countDigits(text){
-  console.log(typeof text);
-  const result = text.split("");
-  console.log(result);
-  
-  const lastResult = result.filter((ele) => {
-    return ele >= 0  && ele !== " ";
-  })
-  console.log(lastResult);
+  qoldiq() {
+    const vaqt = this.realTime();
+    const { non, suv, osh } = this.mahsulotlar;
+    const result = `Hozir ${vaqt}da ${non}ta non, ${suv}ta suv va ${osh}ta osh mavjud!`;
+    console.log(result);
+    return result;
+  }  
+
+  sotish(mahsulot, soni) {
+    const vaqt = this.realTime();
+    if (this.mahsulotlar[mahsulot] === undefined) {
+      const xatolik = `Mahsulot nomi notogri: ${mahsulot}`;
+      console.log(xatolik);
+      return xatolik;
+    }
+
+    if (this.mahsulotlar[mahsulot] < soni) {
+      const xatolik = `false: ${mahsulot} dan faqat ${this.mahsulotlar[mahsulot]}ta mavjud`;
+      console.log(xatolik);
+      return xatolik;
+    }
+
+    this.mahsulotlar[mahsulot] -= soni;
+    const result = `Hozir ${vaqt}da ${soni}ta ${mahsulot} sotildi.`;
+    console.log(result);
+    return result;
+  }
+
+  qabul(mahsulot, soni) {
+    const vaqt = this.realTime();
+    if (this.mahsulotlar[mahsulot] === undefined) {
+      const xatolik = `Mahsulot nomi notogri: ${mahsulot}`;
+      console.log(xatolik);
+      return xatolik;
+    }
+
+    this.mahsulotlar[mahsulot] += soni;
+    const result = `Hozir ${vaqt}da ${soni}ta ${mahsulot} qabul qilindi.`;
+    console.log(result); 
+    return result;
+  }
 }
- countDigits("ieowhfwoui3948665096609elch") ; 
+
+const shop = new Shop(4, 3, 2); 
+
+shop.qoldiq();              
+shop.sotish("non", 4);      
+shop.qabul("osh", 4);       
+shop.qoldiq();               
+ 
 
 
 
@@ -21,12 +74,21 @@ function countDigits(text){
 
 
 
+// // TASK (B) by JONY
 
 
 
-
-
-
+// function countDigits(text){
+//   console.log(typeof text);
+//   const result = text.split("");
+//   console.log(result);
+  
+//   const lastResult = result.filter((ele) => {
+//     return ele >= 0  && ele !== " ";
+//   })
+//   console.log(lastResult);
+// }
+//  countDigits("ieowhfwoui3948665096609elch") ; 
 
 
 
