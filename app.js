@@ -82,7 +82,7 @@ app.get('/author', (req, res) => {
 app.get("/", function (req, res) {    
     db.collection("plans")
     .find()
-    .toArray((err, data) => { 
+    .toArray((err, data) => {  
         if(err) {
             console.log(err);
             res.end("something went wrong");

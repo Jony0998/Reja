@@ -1,71 +1,105 @@
 
-// TASK (C)
 
-class Shop {
-  constructor(non, suv, osh) {
-    this.mahsulotlar = {
-      non: non,
-      suv: suv,
-      osh: osh
-    };   
-  }    
+//TASK (D)
 
-  realTime() {
-    const hozir = new Date();
-    const soat = hozir.getHours().toString().padStart(2, '0');
-    const minut = hozir.getMinutes().toString().padStart(2, '0');
-    return `${soat}:${minut}`;
-  }
+function checkContent(bobo, obbo) {
+  let word1 = bobo.split("").sort().join('')
+   let word2 = obbo.split("").sort().join('')
 
-  qoldiq() {
-    const vaqt = this.realTime();
-    const { non, suv, osh } = this.mahsulotlar;
-    const result = `Hozir ${vaqt}da ${non}ta non, ${suv}ta suv va ${osh}ta osh mavjud!`;
-    console.log(result);
-    return result;
-  }  
-
-  sotish(mahsulot, soni) {
-    const vaqt = this.realTime();
-    if (this.mahsulotlar[mahsulot] === undefined) {
-      const xatolik = `Mahsulot nomi notogri: ${mahsulot}`;
-      console.log(xatolik);
-      return xatolik;
-    }
-
-    if (this.mahsulotlar[mahsulot] < soni) {
-      const xatolik = `false: ${mahsulot} dan faqat ${this.mahsulotlar[mahsulot]}ta mavjud`;
-      console.log(xatolik);
-      return xatolik;
-    }
-
-    this.mahsulotlar[mahsulot] -= soni;
-    const result = `Hozir ${vaqt}da ${soni}ta ${mahsulot} sotildi.`;
-    console.log(result);
-    return result;
-  }
-
-  qabul(mahsulot, soni) {
-    const vaqt = this.realTime();
-    if (this.mahsulotlar[mahsulot] === undefined) {
-      const xatolik = `Mahsulot nomi notogri: ${mahsulot}`;
-      console.log(xatolik);
-      return xatolik;
-    }
-
-    this.mahsulotlar[mahsulot] += soni;
-    const result = `Hozir ${vaqt}da ${soni}ta ${mahsulot} qabul qilindi.`;
-    console.log(result); 
-    return result;
-  }
+   return word1 === word2;
 }
+   
 
-const shop = new Shop(4, 3, 2); 
 
-shop.qoldiq();              
-shop.sotish("non", 4);      
-shop.qabul("osh", 4);       
-shop.qoldiq();               
+console.log(checkContent("bobo", "obbo"));
+
+
+
+
+
+
+//  TASK D
+
+// Ikkita parametra ega function tuzing, va functioning
+// berilgan birinchi va ikkinchi parametr qiymatlari o'zaro to'liq
+// mos kelsa true qiymat qaytarsin
+
+// Masalan: checkContent("mitgroup", "gmtiprou");
+// Yuqoridagi misolda birinchi va ikkinchi parametr qiymatli bir xil
+// ya'ni bir xil harflar qatnashganligi uchun true qiymat qaytaradi.
+
+
+
+
+
+
+// // TASK (C)
+
+// class Shop {
+//   constructor(non, suv, osh) {
+//     this.mahsulotlar = {
+//       non: non,
+//       suv: suv,
+//       osh: osh
+//     };   
+//   }    
+
+//   realTime() {
+//     const hozir = new Date();
+//     const soat = hozir.getHours().toString().padStart(2, '0');
+//     const minut = hozir.getMinutes().toString().padStart(2, '0');
+//     return `${soat}:${minut}`;
+//   }
+
+//   qoldiq() {
+//     const vaqt = this.realTime();
+//     const { non, suv, osh } = this.mahsulotlar;
+//     const result = `Hozir ${vaqt}da ${non}ta non, ${suv}ta suv va ${osh}ta osh mavjud!`;
+//     console.log(result);
+//     return result;
+//   }  
+
+//   sotish(mahsulot, soni) {
+//     const vaqt = this.realTime();
+//     if (this.mahsulotlar[mahsulot] === undefined) {
+//       const xatolik = `Mahsulot nomi notogri: ${mahsulot}`;
+//       console.log(xatolik);
+//       return xatolik;
+//     }
+
+//     if (this.mahsulotlar[mahsulot] < soni) {
+//       const xatolik = `false: ${mahsulot} dan faqat ${this.mahsulotlar[mahsulot]}ta mavjud`;
+//       console.log(xatolik);
+//       return xatolik;
+//     }
+
+//     this.mahsulotlar[mahsulot] -= soni;
+//     const result = `Hozir ${vaqt}da ${soni}ta ${mahsulot} sotildi.`;
+//     console.log(result);
+//     return result;
+//   }
+
+//   qabul(mahsulot, soni) {
+//     const vaqt = this.realTime();
+//     if (this.mahsulotlar[mahsulot] === undefined) {
+//       const xatolik = `Mahsulot nomi notogri: ${mahsulot}`;
+//       console.log(xatolik);
+//       return xatolik;
+//     }
+
+//     this.mahsulotlar[mahsulot] += soni;
+//     const result = `Hozir ${vaqt}da ${soni}ta ${mahsulot} qabul qilindi.`;
+//     console.log(result); 
+//     return result;
+//   }
+// }
+
+// const shop = new Shop(4, 3, 2); 
+
+// shop.qoldiq();              
+// shop.sotish("non", 4);      
+// shop.qabul("osh", 4);       
+// shop.qoldiq();               
  
 
 
