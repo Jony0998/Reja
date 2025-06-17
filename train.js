@@ -1,18 +1,41 @@
 
 
+const car = "RANGEROVER";
+const a = car.split("").reverse().join("");
+
+console.log(a);  
+ 
+  
+
+
+
+
+// E-TASK: 
+
+// Shunday function tuzing, u bitta string argumentni
+//  qabul qilib osha stringni teskari qilib return qilsin.
+// MASALAN: getReverse("hello") return qilsin "olleh"
+
+// @MITASK
+
+
+
+
+
+
+
 //TASK (D)
 
-function checkContent(bobo, obbo) {
-  let word1 = bobo.split("").sort().join('')
-   let word2 = obbo.split("").sort().join('')
+// function checkContent(bobo, obbo) {
+//   let word1 = bobo.split("").sort().join('')
+//    let word2 = obbo.split("").sort().join('')
 
-   return word1 === word2;
-}
+//    return word1 === word2;
+// }
    
 
 
-console.log(checkContent("bobo", "obbo"));
-
+// console.log(checkContent("bobo", "obbo"));
 
 
 

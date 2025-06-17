@@ -20,14 +20,26 @@ else {
 
     const app = require("./app");
    const server = http.createServer(app);       
-let PORT = 3000;
+let PORT = 4002;
 server.listen(PORT, function () {
     console.log(`The server is running successfully on port: ${PORT}, http://localhost:${PORT}`);
 });  
-
+ 
 }
 
  });
 
 
+// PM2
 
+// npm install pm2 —global
+// npm install pm2 -g
+
+// pm2 start server.js —name=MartinReja
+// pm2 logs  
+// pm2 logs ID
+
+// pm2 stop ID
+// pm2 start ID
+// pm2 restart ID
+// pm2 delete ID
