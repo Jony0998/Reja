@@ -1,14 +1,35 @@
 
 
-const car = "RANGEROVER";
-const a = car.split("").reverse().join("");
+// TASK F
 
-console.log(a);  
+// Yagona string argumentga ega findDoublers nomli function tuzing
+// Agar stringda bittadan ortiq bir xil harflar ishtirok etgan bo'lsa
+// true yokida false natija qaytarsin.
+
+// MASALAN: findDoublers("hello"); natija true qaytadi. Sababi ikki marotaba takrorlangan 'll' harfi mavjud!
+
+
+
+function findDoublers(string) {
+  const counts = {};
+  for (let char of string.toLowerCase()) {
+    if (char.match()) {
+      counts[char] = (counts[char] || 0) + 1;
+    }
+  }
+  return Object.values(counts).includes(2); // (3) => false
+}
+ 
+console.log(findDoublers("RealMadrid"));
+ 
+
+
+// const car = "RANGEROVER";
+// const a = car.split("").reverse().join("");
+
+// console.log(a);  
  
   
-
-
-
 
 // E-TASK: 
 
@@ -17,10 +38,6 @@ console.log(a);
 // MASALAN: getReverse("hello") return qilsin "olleh"
 
 // @MITASK
-
-
-
-
 
 
 
